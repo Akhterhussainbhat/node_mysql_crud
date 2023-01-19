@@ -1,0 +1,49 @@
+
+<%- include('./partials/header.ejs') %>
+<div class="container">
+    <div class="row">
+  <div class="col-xs-12 col-sm-12">
+      <div class="box">
+        
+        <!-- <div class="vh-100 d-flex justify-content-center align-items-center "> -->
+            <!-- <div class="alert alert-success" role="alert">
+              Login
+              </div> -->
+            <div class=" p-5 shadow-sm border rounded-5 border-dark bg-white">
+                <h2 class="text-center mb-4 text-dark">Login</h2>
+
+<form action="/auth/authentication" method="post" name="form1">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+            placeholder="Enter email" value="">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="password" name="password" class="form-control" id="password" aria-describedby="emailHelp"
+            placeholder="*********" value="">
+    </div>
+    <div class="mt-5">
+        <input type="submit" class="btn btn-primary" value="Add">
+    </div>
+   
+</form>
+
+<div class="mt-3">
+    <p class="mb-0  text-center">Don't have an account? <a href="<%baseURL%>/student/register"
+            class="text-dark fw-bold">Sign
+            Up</a></p>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<%- include('./partials/footer.ejs') %>

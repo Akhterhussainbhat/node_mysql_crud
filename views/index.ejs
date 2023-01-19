@@ -1,0 +1,63 @@
+<%- include('./partials/header.ejs') %>
+
+
+<!-- 2 columns -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="box">
+        <div class="alert alert-primary" role="alert">
+            Show Details of your Student
+            </div>
+          
+                <% if (messages.success) { %>
+                    <div id="alert" class="justify-content-end">
+                    <p class="alert alert-success mt-4" ><%- messages.success %></p>
+                </div>
+                    <% } %> 
+            <div class="row justify-content-end">
+                <div class="col-xs-12 col-sm-2 ">
+                    <div class="d-grid">
+                        <a href="<%baseURL%>/student/create" class="btn btn-secondary ml-3">New Student</a> 
+                    </div>
+              </div>
+              </div>
+            
+        <div class="table-responsive py-5"> 
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark" style="background-color: black; color: aliceblue;">
+                <tr>
+                  <th scope="col">S. No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% var i=1 %>
+                <% data.forEach((item)=>{ %>
+                <tr>
+                  <th scope="row"><%= i++ %></th>
+                  <td><%=  item.name %></td>
+                  <td><%=  item.email %></td>
+                  <td><%=  item.phone %></td>
+                  <td>
+                    <a  class="btn btn-primary" href="<%baseURL%>/student/edit/<%=item.id%>">Edit</a>
+                    <a class="btn btn-danger" onclick="return alert('Are You sure to delete this?')" href="<%baseURL%>/student/delete/<%=item.id%>">Delete</a>
+                  </td>
+                </tr>
+                <%   }) %>
+                  
+              </tbody>
+            </table>
+            </div>
+            
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<%- include('./partials/footer.ejs') %>
